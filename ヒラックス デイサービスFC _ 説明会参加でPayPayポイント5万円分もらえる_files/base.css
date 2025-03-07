@@ -1185,7 +1185,11 @@ footer>.inner {
 
 /* #cont3 */
 #cont3 {
+<<<<<<< HEAD
 	background-color: #ffffff;
+=======
+	background-color: #FFFFFF;
+>>>>>>> 3ed7da1e0188324905cb26a1d38c591b06d31461
 }
 
 #cont3>figure {
