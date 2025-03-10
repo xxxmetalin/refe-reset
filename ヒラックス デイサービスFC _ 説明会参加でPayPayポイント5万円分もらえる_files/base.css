@@ -1185,11 +1185,7 @@ footer>.inner {
 
 /* #cont3 */
 #cont3 {
-<<<<<<< HEAD
 	background-color: #ffffff;
-=======
-	background-color: #FFFFFF;
->>>>>>> 3ed7da1e0188324905cb26a1d38c591b06d31461
 }
 
 #cont3>figure {
@@ -2633,3 +2629,67 @@ button[type="submit"]:hover {
 		transform: translateX(-200%);
 	}
 }
+
+
+
+.slider-container {
+	position: relative;
+	width: 100%;
+	max-width: 1200px;
+	margin: auto;
+	overflow: hidden;
+  }
+  
+  .slider {
+	display: flex;
+	transition: transform 0.5s ease-in-out;
+  }
+  
+  .slide {
+	min-width: 100%;
+  }
+  
+  .slide img {
+	width: 100%;
+  }
+  
+  .prev-btn {
+	background-image: url(./Group\ 236.png);
+	background-size: cover;
+	width: 40px; /* ボタンの幅 */
+	height: 40px; /* ボタンの高さ */
+	border: none;
+	background-color: transparent;
+  }
+  
+  .next-btn {
+	background-image: url(./Group\ 248.png);
+	background-size: cover;
+	width: 40px; /* ボタンの幅 */
+	height: 40px; /* ボタンの高さ */
+	border: none;
+	background-color: transparent;
+  }
+  
+  
+  .prev-btn:hover, .next-btn:hover {
+	background-color: #ff6600;
+	color: #fff;
+  }
+  
+  .prev-btn {
+	left: -40px; /* ボタン位置調整 */
+  }
+  
+  .next-btn {
+	right: -40px; /* ボタン位置調整 */
+  }
+  
+  .pagination {
+	position: absolute;
+	bottom: -20px; /* ドット位置調整 */
+  }
+  
+  .pagination div {
+   width
+  
