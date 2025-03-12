@@ -1330,9 +1330,6 @@ font-weight: bold;
 	margin-top: 0.3em;
 }
 
-#cont3>div {
-	padding-top: 1em;
-}
 
 #cont3>div p {
 	margin: 1.4em 0;
@@ -1418,12 +1415,6 @@ font-weight: bold;
 	#cont3 ul li div img {
 		width: 100%;
 	}
-
-	#cont3>div {
-		padding-top: 0.5em;
-	}
-
-
 
 
 
@@ -2708,7 +2699,7 @@ button[type="submit"]:hover {
 /* Add these styles to base.css */
 .cta-container {
     max-width: 640px;   /* Match wrapper width */
-    margin: 10px auto;  /* Center on the page, and add spacing */
+    margin: auto;  /* Center on the page, and add spacing */
     text-align: center;  /* Center contents horizontally */
 }
 
@@ -2721,7 +2712,6 @@ button[type="submit"]:hover {
 
 .cta-container a {
     display: block;     /* Make the link take full width */
-    margin-top: 5px;    /* Add space between images */
 }
 
 .cta-container .play_btn div {
