@@ -8,6 +8,7 @@ body {
 	color: #222222;
 	line-height: 1.4;
 	font-feature-settings: "palt";
+	overflow-x: hidden; /* Prevent horizontal scroll */ /* Add to fix this */
 }
 
 @media screen and (max-width:1024px) {
@@ -44,6 +45,7 @@ a:hover {
 
 img {
 	max-width: 100%;
+	height: auto;  /* Important for responsiveness */ /* Add to fix responsiveness */
 }
 
 .only_smart,
@@ -85,7 +87,51 @@ img {
 	}
 }
 
-#wrapper {}
+/* Wrapper for overall constraint */
+#wrapper {
+  max-width: 640px; /* Or your desired width */
+  margin: 0 auto; /* Center the content */
+  text-align: center; /* Ensure content within wrapper is centered */
+  overflow: hidden;  /* Prevent content from overflowing */  /* Add to fix this */
+}
+
+#wrapper img {
+  max-width: 100%; /* Images should not exceed wrapper width */
+  height: auto; /* Maintain aspect ratio */
+}
+
+/* Responsive Video Embed */
+#cont1 #movie {
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  max-width: 640px;  /* Ensure video container matches overall width */
+}
+
+#cont1 #movie iframe {
+  width: 100%; /* Make the iframe fill its container */
+  height: auto;
+  aspect-ratio: 16 / 9; /* Maintain 16:9 aspect ratio */
+}
+
+/* Adjust slider container width */
+.slider-container {
+    max-width: 640px;
+}
+
+/* Style to vertically center the CTA buttons */
+.play_btn {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Center horizontally */
+}
+
+/* Remove padding for smaller screens */
+@media (max-width: 768px) {
+    #wrapper {
+        margin: 0; /* Remove margin on smaller screens */
+    }
+}
 
 
 /* .animation */
@@ -201,7 +247,11 @@ img {
 
 
 /* header */
-header {}
+header {
+  width: 100%; /* Header should span the full width */
+  max-width: 640px; /* Match the #wrapper's max-width */
+  margin: 0 auto;   /* Center the header */
+}
 
 
 /* article */
@@ -423,7 +473,8 @@ footer>.inner {
 .highlight22 {
 
 	line-height: 1.8em;
-	font-weight: bold;
+}
+font-weight: bold;
 }
 
 
@@ -2328,129 +2379,66 @@ div .h3 {
 
 /* #contact */
 
-#contact>figure {
-	display: inline-block;
-	max-width: 723px;
-	width: 50%;
-	margin: 100px auto 150px;
-}
-
-
-
 #contact {
 	background-color: #0c3073;
-	padding-bottom: 150px;
-}
-
-#contact h2 {
-	margin-bottom: 50px;
-	font-size: 50px;
-	color: #222222;
-}
-
-#contact .inner>p {
-	font-weight: bold;
-}
-
-#contact .inner>div {
-	margin: 1em 0 2em;
-	padding: 1.5em 0;
-}
-
-#contact .inner>div ul {
-	display: inline-block;
-}
-
-#contact .inner>div ul li {
-	padding: 0.1em 0;
-	font-weight: bold;
-	text-align: left;
-}
-
-#contact .inner dl {
-	max-width: 96%;
-	text-align: left;
-}
-
-#contact .inner dl dt {
-	margin: 1em 0 0.3em;
-	font-weight: bold;
-}
-
-
-@media screen and (max-width:1024px) {
-
-	#contact>figure {
-		display: inline-block;
-		max-width: 723px;
-		width: 50%;
-		margin: 15% auto 10%;
-	}
-
-	#contact {
-		padding-bottom: 5%;
-	}
-
-
-}
-
-
-
-
-@media screen and (max-width:768px) {
-
-	#contact {
-		padding-bottom: 5%;
-	}
-
-
-
-	#contact>figure {
-		display: inline-block;
-		max-width: 723px;
-		width: 50%;
-		margin: 15% auto 10%;
-	}
-
-
-	#contact h2 {
-		margin-bottom: 5%;
-		font-size: 6.5vw;
-	}
-
-	#contact .inner dl {
-		font-size: 16px;
-	}
-}
-
-
-
-
-
-
-
-
-@media screen and (max-width:768px) {
-
-
-	#contact>figure {
-		display: inline-block;
-		max-width: 723px;
-		width: 50%;
-		margin: 15% auto 10%;
-	}
-
-
-	#contact h2 {
-		margin-bottom: 5%;
-		font-size: 6.5vw;
-	}
-
-	#contact .inner dl {
-		font-size: 16px;
-	}
-}
-
+	padding-bottom: 30px;
+	text-align: center;
+	max-width: 640px; /* match the wrapper width */
+	margin: 0 auto; /* Horizontal centering */
+  }
+  
+  .contact-content {
+	max-width: 640px;
+	margin: 0 auto;
+	color: white; /* Makes list text readable */
+	padding: 20px;
+  }
+  
+  .contact-content img {
+	  max-width: 200px;
+	  height: auto;
+	  margin-bottom: 20px;
+	  display: block;    /* Ensure logo is on its own line and centered */
+	  margin-left: auto;  /* Center the logo horizontally */
+	  margin-right: auto;
+  }
+  
+  .contact-content ul {
+	  list-style: none;
+	  padding: 0;
+	  text-align: center; /* Make text center */
+  }
+  
+  .contact-content ul li {
+	  margin-bottom: 5px;
+	  text-align: left; /* Left-align text within each list item */
+	  position: relative; /* For bullet positioning */
+	  padding-left: 20px; /* Space for bullet */
+  }
+  
+  .contact-content ul li:before {
+	  content: "●";
+	  position: absolute;
+	  left: 0;
+	  top: 0;
+	  color: #FFD700;
+  }
+  
+  /* Reset DL to single column */
+  .contact-dl {
+	text-align: center;
+	/*	display: flex;   Enable flex layout */  Remove this line
+	/*	flex-wrap: wrap; */   Remove this line
+	max-width: 100%;   /* Take full width */
+	margin: 0 auto;    /* Center the whole dl block */
+  }
+  
+  .contact-dl dt {
+	/*width: auto;   Distribute items evenly on one line */ Remove this line
+	display: block;   Force each item to be a block */  Replace this line
+	margin: 5px auto;  Add space around them */  Replace this line
+	text-align: center;
+  }
 
 /* 入力パーツ */
 input[type="text"],
@@ -2518,11 +2506,16 @@ button[type="submit"]:hover {
 }
 
 .footer {
-	background-color: #217ead;
-	color: white;
-	padding: 2rem 0;
-	font-family: 'Helvetica Neue', Arial, sans-serif;
+  background-color: #217ead;
+  color: white;
+  padding: 2rem 0;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  text-align: center;  /* Center footer content */
+  width: 100%;       /* Make footer full width */
+  max-width: 640px;  /* Limit footer width to the wrapper size */
+  margin: 0 auto;      /* Center the footer itself */
 }
+
 
 .footer-content {
 	max-width: 1200px;
@@ -2587,109 +2580,152 @@ button[type="submit"]:hover {
 
 
 
+/* loop */
 .loop {
-	padding-top: 30px;
-	padding-bottom: 0px;
-	overflow: hidden;
+    padding-top: 30px;
+    padding-bottom: 0px;
+    overflow: hidden;
 }
 
 .loop__box {
-	display: flex;
-	width: 300vw;
+    display: flex;
+    width: 300vw;
 }
 
 .loop__box img {
-	min-width: 300vw;
+    min-width: 300vw;
 }
 
 .loop__box img:first-child {
-	animation: loop 60s -30s linear infinite;
+    animation: loop 60s -30s linear infinite;
 }
 
 .loop__box img:last-child {
-	animation: loop2 60s linear infinite;
+    animation: loop2 60s linear infinite;
 }
 
 @keyframes loop {
-	0% {
-		transform: translateX(100%);
-	}
+    0% {
+        transform: translateX(100%);
+    }
 
-	to {
-		transform: translateX(-100%);
-	}
+    to {
+        transform: translateX(-100%);
+    }
 }
 
 @keyframes loop2 {
-	0% {
-		transform: translateX(0);
-	}
+    0% {
+        transform: translateX(0);
+    }
 
-	to {
-		transform: translateX(-200%);
-	}
+    to {
+        transform: translateX(-200%);
+    }
 }
 
-
-
 .slider-container {
-	position: relative;
-	width: 100%;
-	max-width: 1200px;
-	margin: auto;
-	overflow: hidden;
-  }
-  
-  .slider {
-	display: flex;
-	transition: transform 0.5s ease-in-out;
-  }
-  
-  .slide {
-	min-width: 100%;
-  }
-  
-  .slide img {
-	width: 100%;
-  }
-  
-  .prev-btn {
-	background-image: url(./Group\ 236.png);
-	background-size: cover;
-	width: 40px; /* ボタンの幅 */
-	height: 40px; /* ボタンの高さ */
-	border: none;
-	background-color: transparent;
-  }
-  
-  .next-btn {
-	background-image: url(./Group\ 248.png);
-	background-size: cover;
-	width: 40px; /* ボタンの幅 */
-	height: 40px; /* ボタンの高さ */
-	border: none;
-	background-color: transparent;
-  }
-  
-  
-  .prev-btn:hover, .next-btn:hover {
-	background-color: #ff6600;
-	color: #fff;
-  }
-  
-  .prev-btn {
-	left: -40px; /* ボタン位置調整 */
-  }
-  
-  .next-btn {
-	right: -40px; /* ボタン位置調整 */
-  }
-  
-  .pagination {
-	position: absolute;
-	bottom: -20px; /* ドット位置調整 */
-  }
-  
-  .pagination div {
-   width
-  
+    position: relative;
+    max-width: 600px;  /* Match overall content max-width */
+    margin: 20px auto; /* Center and provide vertical spacing */
+    overflow: hidden;
+    border: 1px solid #ccc; /* Optional: for better visualization */
+    border-radius: 8px;   /* Add some rounded corners to the container */
+}
+
+.slider {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+    min-width: 100%;
+    padding: 20px;
+    box-sizing: border-box;   /* Include padding in width calculation */
+    text-align: center; /* Center content */
+
+}
+
+.slide img {
+    max-width: 100%;   /* Responsive image size */
+    height: auto;
+    margin-bottom: 10px; /* Space between image and text */
+    border-radius: 8px;  /* Match container rounded corners */
+}
+
+.slide-caption {
+    font-size: 16px;
+    color: #333;
+}
+
+.prev-btn,
+.next-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;  /* Transparent background */
+    border: none;  /* Remove border */
+    cursor: pointer;
+    padding: 10px;
+    width: 40px;    /* or whatever width your arrow images are */
+    height: 40px;
+    z-index: 10;  /* Ensure arrows are on top */
+}
+
+.prev-btn {
+    left: 10px;
+}
+
+.next-btn {
+    right: 10px;
+}
+
+.prev-btn img,
+.next-btn img {
+    max-width: 100%;
+    height: auto;
+}
+
+.pagination {
+    text-align: center;
+    padding: 10px 0; /* Adjust padding */
+}
+
+.pagination div {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #ddd;
+  margin: 0 5px;
+  cursor: pointer;
+}
+
+.pagination div.active {
+  background-color: #333;
+}
+
+/* Add these styles to base.css */
+.cta-container {
+    max-width: 640px;   /* Match wrapper width */
+    margin: 10px auto;  /* Center on the page, and add spacing */
+    text-align: center;  /* Center contents horizontally */
+}
+
+.cta-container img {
+    display: block;      /* Ensure the image takes full width */
+    max-width: 100%;   /* Make the image responsive */
+    height: auto;
+    margin: 0 auto;     /* Center the image horizontally */
+}
+
+.cta-container a {
+    display: block;     /* Make the link take full width */
+    margin-top: 5px;    /* Add space between images */
+}
+
+.cta-container .play_btn div {
+    display: inline-block;  /* Allows width/height settings */
+    max-width: 100%;      /* Fit inside cta-container */
+    height: auto;
+}

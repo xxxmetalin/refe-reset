@@ -1,51 +1,42 @@
-document.addEventListener("DOMContentLoaded", () => {
-  const slider = document.querySelector('.slider');
-  const slides = document.querySelectorAll('.slide');
-  const prevBtn = document.querySelector('.prev-btn');
-  const nextBtn = document.querySelector('.next-btn');
-  const pagination = document.querySelector('.pagination');
+$(document).ready(function() {
+    const sliderContainer = $('.slider-container');
+    const slider = sliderContainer.find('.slider');
+    const slides = slider.find('.slide');
+    const prevBtn = sliderContainer.find('.prev-btn');
+    const nextBtn = sliderContainer.find('.next-btn');
+    const pagination = sliderContainer.find('.pagination');
+    let slideIndex = 0;
 
-  let currentIndex = 0;
+    // Initialize Pagination
+    function initPagination() {
+        for (let i = 0; i < slides.length; i++) {
+            const dot = $('<div>').on('click', () => goToSlide(i));
+            pagination.append(dot);
+        }
+        updatePagination();
+    }
 
-  // ページネーション生成
-  slides.forEach((_, index) => {
-      const dot = document.createElement('div');
-      dot.addEventListener('click', () => goToSlide(index));
-      if (index === currentIndex) dot.classList.add('active');
-      pagination.appendChild(dot);
-  });
+    function goToSlide(index) {
+        slideIndex = index;
+        if (slideIndex < 0) slideIndex = slides.length - 1;
+        if (slideIndex >= slides.length) slideIndex = 0;
 
-  function updatePagination() {
-      const dots = document.querySelectorAll('.pagination div');
-      dots.forEach((dot, index) => {
-          dot.classList.toggle('active', index === currentIndex);
-      });
-  }
+        slider.css('transform', `translateX(-${slideIndex * 100}%)`);
+        updatePagination();
+    }
 
-  function goToSlide(index) {
-      currentIndex = index;
-      slider.style.transform = `translateX(-${currentIndex * slides[0].clientWidth}px)`;
-      updatePagination();
-  }
+    function updatePagination() {
+        pagination.find('div').removeClass('active').eq(slideIndex).addClass('active');
+    }
 
-  nextBtn.addEventListener('click', () => {
-      if (currentIndex < slides.length - 1) {
-          goToSlide(currentIndex + 1);
-      } else {
-          goToSlide(0); // 最初に戻る
-      }
-  });
+    // Event Listeners
+    prevBtn.on('click', function() {
+        goToSlide(slideIndex - 1);
+    });
 
-  prevBtn.addEventListener('click', () => {
-      if (currentIndex > 0) {
-          goToSlide(currentIndex - 1);
-      } else {
-          goToSlide(slides.length - 1); // 最後に戻る
-      }
-  });
+    nextBtn.on('click', function() {
+        goToSlide(slideIndex + 1);
+    });
 
-  // ウィンドウリサイズ時にスライダー幅を再計算
-  window.addEventListener('resize', () => {
-      slider.style.transform = `translateX(-${currentIndex * slides[0].clientWidth}px)`;
-  });
+    initPagination();
 });
