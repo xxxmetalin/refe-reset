@@ -1,0 +1,15 @@
+@use "../foundation/mixin" as bp;
+
+.l-container {
+  max-width: 1180px;
+  margin-inline: auto;
+  padding-inline: 20px;
+  position: relative;
+  @include bp.breakpoint('sp') {
+    padding-inline: 30px;
+  }
+}
+
+.l-container__full {
+  margin-inline: calc(50% - 50vw);
+}

@@ -1,0 +1,62 @@
+@use "../../foundation/_mixin.scss" as bp;
+
+.c-img-deco {
+  &::before, &::after {
+    content: '';
+    position: absolute;
+    background: var(--main);
+  }
+  &::before {
+    width: 270px;
+    height: 2px;
+    right: -60px;
+    top: -30px;
+    @include bp.breakpoint('sp') {
+      width: 162px;
+      right: -4px;
+      top: -39px;
+    }
+  }
+  &::after {
+    width: 2px;
+    height: 240px;
+    right: -30px;
+    top: -60px;
+    @include bp.breakpoint('sp') {
+      height: 162px;
+      right: 8px;
+      top: -49px;
+    }
+  }
+  & + & {
+    &::before, &::after {
+      content: '';
+      position: absolute;
+      background: var(--main);
+      top: auto;
+      right: auto;
+    }
+    &::before {
+      width: 270px;
+      height: 2px;
+      left: -60px;
+      bottom: -27px;
+      @include bp.breakpoint('sp') {
+        width: 162px;
+        left: -17px;
+        bottom: -31px;
+      }
+    }
+    &::after {
+      width: 2px;
+      height: 240px;
+      left: -30px;
+      bottom: -60px;
+      @include bp.breakpoint('sp') {
+        height: 162px;
+        left: -7px;
+        bottom: -41px;
+      }
+    }
+  }
+}

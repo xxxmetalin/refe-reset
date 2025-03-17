@@ -1,0 +1,106 @@
+@use "../../foundation/_mixin.scss" as bp;
+
+.c-fixed-link {
+  width: 115px;
+  height: 115px;
+  background: var(--main);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 3px;
+  @include bp.breakpoint('tablet') {
+    width: calc(100% / 3);
+    height: 65px;
+    display: flex !important;
+    align-items: center;
+    flex-direction: row;
+    gap: 8px;
+    .-reservation {
+      margin-top: -4px;
+    }
+    &.-line {
+      background: #03C755;
+      gap: 0;
+    }
+    &.-tel {
+      background: #DEA12F;
+      gap: 2px;
+    }
+  }
+  &-wrap {
+    position: fixed;
+    right: 0;
+    top: 75%;
+    z-index: var(--fixedZindex);
+    @include bp.breakpoint('tablet') {
+      top: auto;
+      bottom: 0;
+      right: auto;
+      left: 0;
+      display: flex;
+      width: 100%;
+    }
+  }
+  &__icon {
+    width: 48px;
+    @include bp.breakpoint('tablet') {
+      width: 23px;
+      &.-line {
+        width: 38px;
+      }
+      &.-tel {
+        width: 26px;
+      }
+    }
+  }
+  &__text {
+    color: #fff;
+    letter-spacing: 0;
+    @include bp.breakpoint('sp') {
+      font-size: 1.3rem;
+    }
+  }
+}
+
+.c-link-arrow {
+  display: inline-block;
+  &__wrap {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    .gap-18 {
+      gap: 18px;
+    }
+  }
+  &__text {
+    color: var(--main);
+  }
+  &__circle {
+    width: 48px;
+    height: 48px;
+    background: var(--main);
+    border-radius: 50%;
+    position: relative;
+    transition: 0.4s;
+  }
+  &__arrow {
+    width: 5px;
+    margin-top: -1px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+  &:hover {
+    .c-link-arrow__circle {
+      transition: 0.6s;
+      scale: 1.1;
+    }
+    .c-link-arrow__arrow {
+      img {
+        animation: link-arrow 0.6s;
+      }
+    }
+  }
+}

@@ -1,0 +1,20 @@
+@use "../../foundation/_mixin.scss" as bp;
+
+.c-heading {
+  text-align: center;
+  &__sub {
+    text-transform: uppercase;
+    color: var(--orange);
+  }
+  &__main {
+    font-size: 24px;
+    font-weight: 700;
+    span {
+      font-size: 24px;
+      color: var(--orange);
+    }
+    .number {
+      font-size: 32px;
+    }
+  }
+}

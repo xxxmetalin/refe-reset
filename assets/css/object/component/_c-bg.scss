@@ -1,0 +1,13 @@
+@use "./../../foundation/_mixin.scss" as bp;
+
+.c-bg-main {
+  background: var(--main);
+}
+
+.c-bg-secound {
+  background: var(--second);
+}
+
+.c-bg-lightgreen {
+  background: var(--lightgreen);
+}
