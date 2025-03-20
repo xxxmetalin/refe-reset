@@ -1,0 +1,21 @@
+@use "../../foundation/mixin" as bp;
+
+.for-large {
+  @include bp.breakpoint('tablet') {
+    display: none;
+  }
+}
+
+.for-mobile {
+  display: none;
+  @include bp.breakpoint('tablet') {
+    display: block;
+  }
+}
+
+.for-sp {
+  display: none;
+  @include bp.breakpoint('sp') {
+    display: block;
+  }
+}

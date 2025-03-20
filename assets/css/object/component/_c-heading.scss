@@ -1,0 +1,32 @@
+@use "../../foundation/_mixin.scss" as bp;
+
+.c-heading {
+  text-align: center;
+  &__sub {
+    text-transform: uppercase;
+    color: var(--orange);
+    @include bp.breakpoint('tablet') {
+      font-size: 14px;
+    }
+  }
+  &__main {
+    font-size: 24px;
+    font-weight: 700;
+    @include bp.breakpoint('tablet') {
+      font-size: 20px;
+    }
+    span {
+      font-size: 24px;
+      color: var(--orange);
+      @include bp.breakpoint('tablet') {
+        font-size: 20px;
+      }
+    }
+    .number {
+      font-size: 32px;
+      @include bp.breakpoint('tablet') {
+        font-size: 24px;
+      }
+    }
+  }
+}

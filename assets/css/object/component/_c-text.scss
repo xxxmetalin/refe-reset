@@ -1,0 +1,17 @@
+@use "./../../foundation/_mixin.scss" as bp;
+
+.c-bold {
+  font-weight: bold;
+}
+
+.c-color-main {
+  color: var(--main);
+}
+
+.c-color-black {
+  color: #000;
+}
+
+.c-writing-rl {
+  writing-mode: vertical-rl;
+}
