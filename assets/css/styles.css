@@ -478,19 +478,6 @@ body {
     height: 164px;
   }
 }
-.p-top__lead::before {
-  background: var(--blue);
-  left: 0;
-  -webkit-clip-path: polygon(0 0, 100% 70%, 100% 100%, 0% 100%);
-          clip-path: polygon(0 0, 100% 70%, 100% 100%, 0% 100%);
-}
-.p-top__lead::after {
-  background: var(--orange);
-  left: 0;
-  -webkit-clip-path: polygon(0 70%, 100% 0%, 100% 100%, 0% 100%);
-          clip-path: polygon(0 70%, 100% 0%, 100% 100%, 0% 100%);
-  z-index: -2;
-}
 .p-top__lead-heading {
   max-width: 560px;
   margin-inline: auto;
