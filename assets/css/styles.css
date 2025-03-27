@@ -1120,4 +1120,25 @@ body {
   .for-sp {
     display: block;
   }
+
+
+  .h1_wrapper {
+    display: flex;
+  }
+  .h1_circle_number {
+    width: 50px;
+    height: 50px;
+    margin-right: 15px;
+    margin-bottom: 5px;
+    padding-top: 13px;
+    background-color: var(--blue);
+    border-radius: 50%;
+    text-align: center;
+    box-sizing: border-box;
+    font-weight: bold;
+  }
+  h1 {
+    margin: 0;
+  }
+  
 }/*# sourceMappingURL=styles.css.map */
