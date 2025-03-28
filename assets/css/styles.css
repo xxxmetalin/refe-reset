@@ -947,6 +947,7 @@ body {
 .p-top__message {
   padding-block: 120px;
   position: relative;
+  background-image: url(../images/message-bg.png);
 }
 @media (max-width: 959px) {
   .p-top__message {
@@ -1141,4 +1142,16 @@ body {
     margin: 0;
   }
   
+
+.p-top__reason-2 l-container__full {
+  padding-top: 120px;
+  padding-bottom: 120px;
+}
+  
+
+
+
+
+
+
 }/*# sourceMappingURL=styles.css.map */
