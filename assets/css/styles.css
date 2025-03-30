@@ -1110,42 +1110,79 @@ body {
   }
 }
 
+/* セクション全体 */
 .p-top__reason {
-  padding-top: 120px;
-  padding-bottom: 120px;
+  padding: 120px 0;
 }
 
-.p-top__reason-2 {
-  padding-top: 120px;
-  padding-bottom: 120px;
-  background: var(--skin);
-}
-.p-top__reason-2-inner {
-  max-width: 1140px;
-  padding-inline: 104px;
-  margin-inline: auto;
+.c-heading {
+  text-align: center;
+  margin-bottom: 40px;
 }
 
-.h1_wrapper {
-  display: grid;
-  grid-template-columns: 32px 1fr 8px;
-  gap: 7px;
-  font-weight: 500;
+/* カード全体 */
+.p-top__reason-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
 }
-.h1_circle_number {
+
+.p-top__reason-card {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.p-top__reason-card.reverse {
+  flex-direction: row-reverse; /* テキストと画像を逆配置 */
+}
+
+/* 左右コンテンツ */
+.p-top__reason-img img {
+  width: auto;
+  max-width: 300px;
+}
+
+.p-top__reason-text {
+  flex: 1;
+}
+
+/* 番号スタイル */
+.p-top__reason-number {
+  display: inline-block;
   width: 50px;
-    height: 50px;
-    margin-right: 15px;
-    margin-bottom: 5px;
-    padding-top: 13px;
-    background-color: var(--blue);
-    border-radius: 50%;
+  height: 50px;
+  background-color: var(--blue);
+  color: #fff;
+  font-weight: bold;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 50px;
+}
+
+/* 見出しと説明文 */
+.p-top__reason-text h3 {
+  margin-bottom: 10px;
+}
+
+.p-top__reason-text p {
+  margin-bottom: 0;
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 768px) {
+  .p-top__reason-card {
+    flex-direction: column; /* モバイルでは縦並びに */
     text-align: center;
-    box-sizing: border-box;
-    font-weight: bold;
+    gap: 20px;
   }
-h1 > {
-    margin: 0;
+
+  .p-top__reason-img img {
+    max-width: none; /* モバイルでは画像サイズ制限解除 */
+    width: auto;
+    height: auto;
+    margin-bottom: 20px; /* 縦並び時に余白追加 */
+  }
 }
 
 
