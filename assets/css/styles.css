@@ -1129,9 +1129,15 @@ body {
 
 .p-top__reason-card {
   display: flex;
+  grid-template-columns: 52.7% auto;
   align-items: center;
-  gap: 20px;
+  gap: 40px;
+  padding: 32px 80px;
+  background: #fff;
+  border-radius: 10px;
+  filter: drop-shadow(0 0 20px var(--gray));
 }
+
 
 .p-top__reason-card.reverse {
   flex-direction: row-reverse; /* テキストと画像を逆配置 */
@@ -1141,6 +1147,7 @@ body {
 .p-top__reason-img img {
   width: auto;
   max-width: 300px;
+  overflow: hidden;
 }
 
 .p-top__reason-text {
@@ -1170,22 +1177,18 @@ body {
 }
 
 /* レスポンシブ対応 */
-@media (max-width: 768px) {
+@media (max-width: 1180px) {
   .p-top__reason-card {
-    flex-direction: column; /* モバイルでは縦並びに */
-    text-align: center;
+    padding-inline: 40px;
     gap: 20px;
   }
+}
 
   .p-top__reason-img img {
-    max-width: none; /* モバイルでは画像サイズ制限解除 */
     width: auto;
     height: auto;
     margin-bottom: 20px; /* 縦並び時に余白追加 */
   }
-}
-
-
 
 .p-top__strength {
   padding-top: 120px;
