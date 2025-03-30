@@ -1115,10 +1115,6 @@ body {
   padding: 120px 0;
 }
 
-.c-heading {
-  text-align: center;
-  margin-bottom: 40px;
-}
 
 /* カード全体 */
 .p-top__reason-stack {
@@ -1150,9 +1146,40 @@ body {
   overflow: hidden;
 }
 
+
 .p-top__reason-text {
-  flex: 1;
+  text-align: center;
 }
+.p-top__reason-text__sub {
+  text-transform: uppercase;
+  color: var(--orange);
+}
+@media (max-width: 959px) {
+  .p-top__reason-text__sub {
+    font-size: 14px;
+  }
+}
+
+.p-top__reason-text {
+  font-size: 24px;
+  font-weight: 700;
+}
+@media (max-width: 959px) {
+  .p-top__reason-text {
+    font-size: 20px;
+  }
+}
+
+.p-top__reason-text span {
+  font-size: 24px;
+  color: var(--orange);
+}
+@media (max-width: 959px) {
+  .p-top__reason-text span {
+    font-size: 20px;
+  }
+}
+
 
 /* 番号スタイル */
 .p-top__reason-number {
