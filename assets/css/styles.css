@@ -843,6 +843,93 @@ body {
     border-radius: 4px;
   }
 }
+
+
+/* セクション全体 */
+.reason-section {
+  background-color: #fdf4e9;
+}
+
+/* ヘッダー部分 */
+.reason-header {
+  margin-bottom: 40px;
+}
+
+.reason-subtitle {
+  display: block;
+  font-size: 16px;
+  color: #f28b36;
+}
+
+.reason-title {
+  font-size: 28px;
+  color: #303031;
+}
+
+.reason-highlight {
+  color: #f28b36;
+}
+
+/* カード全体 */
+.reason-cards {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+}
+/* 599px以下の場合 */
+@media (max-width: 599px) {
+  .reason-cards {
+    display: block; /* Flexを解除して縦並びに */
+    padding: 20px; /* パディングを調整 */
+    text-align: center; /* テキスト中央揃え */
+  }
+}
+
+.reason-card {
+  max-width: 500px;
+}
+
+
+/* カード画像 */
+.reason-image {
+  width: 100%;
+  border-radius: 10px;
+}
+
+/* コンテンツ部分 */
+.reason-content {
+  margin-top: 20px;
+}
+
+/* 数字と見出し部分 */
+.reason-heading-wrapper {
+  display: flex;
+  align-items: center; /* 垂直方向で中央揃え */
+  gap: 10px; /* 数字と見出しの間に余白 */
+  margin-bottom: 10px; /* 下部余白 */
+}
+
+.reason-number {
+  font-size: 72px; /* 数字のサイズ */
+  font-weight: bold;
+  color: transparent;
+  -webkit-text-stroke: 2px #f28b36; /* 枠線スタイル */
+}
+
+.reason-heading {
+  font-size: 18px;
+  color: #303031;
+}
+
+.reason-description {
+  font-size: 14px;
+  color: #303031;
+}
+
+
+
+
+
 .p-top__about-content {
   position: relative;
   margin-top: 80px;
@@ -1133,9 +1220,24 @@ body {
   border-radius: 10px;
   filter: drop-shadow(0 0 20px var(--gray));
 }
+/* 599px以下の場合 */
+@media (max-width: 599px) {
+  .p-top__reason-card {
+    display: block; /* Flexを解除して縦並びに */
+    padding: 20px; /* パディングを調整 */
+    text-align: center; /* テキスト中央揃え */
+  }
+
+  .p-top__reason-img img {
+    margin-bottom: 20px; /* 縦並び時に画像下に余白 */
+    max-width: 100%; /* 幅を親要素に合わせる */
+    height: auto; /* 高さを自動調整 */
+  }
+}
 
 
-.p-top__reason-card.reverse {
+
+.p-top__reason-card:nth-child(odd) {
   flex-direction: row-reverse; /* テキストと画像を逆配置 */
 }
 
@@ -1147,16 +1249,13 @@ body {
 }
 
 
-.p-top__reason-text {
-  text-align: center;
-}
-.p-top__reason-text__sub {
-  text-transform: uppercase;
+
+.p-top__reason-main {
   color: var(--orange);
 }
 @media (max-width: 959px) {
-  .p-top__reason-text__sub {
-    font-size: 14px;
+  .p-top__reason-main {
+    color: var(--orange);
   }
 }
 
@@ -1172,7 +1271,6 @@ body {
 
 .p-top__reason-text span {
   font-size: 24px;
-  color: var(--orange);
 }
 @media (max-width: 959px) {
   .p-top__reason-text span {
@@ -1188,7 +1286,6 @@ body {
   height: 50px;
   background-color: var(--blue);
   color: #fff;
-  font-weight: bold;
   border-radius: 50%;
   text-align: center;
   line-height: 50px;
@@ -1202,6 +1299,30 @@ body {
 .p-top__reason-text p {
   margin-bottom: 0;
 }
+
+/* 説明文 */
+.p-top__reason-desc {
+  font-size: 20px;
+  font-weight: 400; /* 細字に設定 */
+}
+@media (max-width: 959px) {
+  .p-top__reason-desc {
+    font-size: 16px;
+    font-weight: 400; /* 細字に設定 */
+  }
+}
+.p-top__reason-desc span {
+  font-size: 24px;
+  background: linear-gradient(transparent 70%, rgba(254, 193, 47, 0.7) 30%);
+}
+@media (max-width: 959px) {
+  .p-top__reason-desc span {
+    font-size: 18px;
+  }
+}
+
+
+
 
 /* レスポンシブ対応 */
 @media (max-width: 1180px) {
