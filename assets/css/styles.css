@@ -850,31 +850,17 @@ body {
   background-color: #fdf4e9;
 }
 
-/* ヘッダー部分 */
-.reason-header {
-  margin-bottom: 40px;
-}
-
-.reason-subtitle {
-  display: block;
-  font-size: 16px;
-  color: #f28b36;
-}
-
-.reason-title {
-  font-size: 28px;
-  color: #303031;
-}
-
-.reason-highlight {
-  color: #f28b36;
-}
 
 /* カード全体 */
 .reason-cards {
   display: flex;
   justify-content: center;
   gap: 40px;
+}
+@media (max-width: 959px) {
+  .reason-cards {
+    gap: 1px;
+  }
 }
 /* 599px以下の場合 */
 @media (max-width: 599px) {
@@ -888,12 +874,28 @@ body {
 .reason-card {
   max-width: 500px;
 }
+@media (max-width: 959px) {
+  .reason-card {
+    max-width: 300px;
+  }
+}
+
+
+/* 画像コンテナを均等に */
+.reason-img {
+  width: 100%;
+}
 
 
 /* カード画像 */
 .reason-image {
   width: 100%;
   border-radius: 10px;
+}
+@media (max-width: 959px) {
+  .reason-image {
+    border-radius: 4px;
+  }
 }
 
 /* コンテンツ部分 */
@@ -1237,7 +1239,7 @@ body {
 
 
 
-.p-top__reason-card:nth-child(odd) {
+#reason .p-top__reason-card:nth-child(odd) {
   flex-direction: row-reverse; /* テキストと画像を逆配置 */
 }
 
@@ -1252,44 +1254,37 @@ body {
 
 .p-top__reason-main {
   color: var(--orange);
-}
-@media (max-width: 959px) {
-  .p-top__reason-main {
-    color: var(--orange);
-  }
-}
-
-.p-top__reason-text {
   font-size: 24px;
   font-weight: 700;
 }
 @media (max-width: 959px) {
-  .p-top__reason-text {
+  .p-top__reason-main {
+    color: var(--orange);
     font-size: 20px;
   }
 }
 
-.p-top__reason-text span {
-  font-size: 24px;
-}
-@media (max-width: 959px) {
-  .p-top__reason-text span {
-    font-size: 20px;
-  }
-}
 
 
 /* 番号スタイル */
 .p-top__reason-number {
   display: inline-block;
-  width: 50px;
-  height: 50px;
+  width: 88px;
+  height: 88px;
   background-color: var(--blue);
   color: #fff;
   border-radius: 50%;
   text-align: center;
-  line-height: 50px;
+  font-size: 44px;
+  line-height: 88px;
 }
+
+#strength .p-top__reason-number {
+  background-color: var(--orange);
+  position: absolute;
+  top: -44px;
+}
+
 
 /* 見出しと説明文 */
 .p-top__reason-text h3 {
@@ -1338,11 +1333,21 @@ body {
     margin-bottom: 20px; /* 縦並び時に余白追加 */
   }
 
-.p-top__strength {
-  padding-top: 120px;
-  padding-bottom: 120px;
-  background: var(--skin);
+
+/* 背景部分 */
+.p-top__strength-bg {
+  background: var(--skin); /* 背景色 */
+  width: 100%; /* 横幅いっぱいに広げる */
+  padding: 60px 0; /* 上下の余白 */
 }
+
+/* コンテンツ部分 */
+.p-top__strength-inner {
+  max-width: 1180px; /* コンテンツ幅を1180pxに制限 */
+  margin: 0 auto; /* 中央揃え */
+  padding: 0 20px; /* 左右余白（レスポンシブ対応用） */
+}
+
 
 @keyframes link-arrow {
   0% {
@@ -1388,6 +1393,8 @@ body {
     display: block;
   }
 
+
+  
 
 
 
