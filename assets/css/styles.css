@@ -1278,11 +1278,24 @@ body {
   font-size: 44px;
   line-height: 88px;
 }
+@media (max-width: 599px) {
+  .p-top__reason-number {
+    width: 44px;
+    height: 44px;
+    font-size: 22px;
+    line-height: 44px;
+    }
+}
+
 
 #strength .p-top__reason-number {
   background-color: var(--orange);
-  position: absolute;
   top: -44px;
+}
+@media (min-width: 599px) {
+  #strength .p-top__reason-number {
+    position: absolute;
+  }
 }
 
 
